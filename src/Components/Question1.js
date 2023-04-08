@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react'
 // Create a React component that fetches weather data from an API endpoint using useEffect hook and displays the current temperature, humidity, and wind speed on the screen using the useState hook. Add a button which toggles between Celsius and Fahrenheit units for the temperature.
 
-// Multiply the °C temperature by 1.8. Add 32 to this number. This is the answer in °F.
-
-//  °F = (°C × 9/5) + 32
-
-// It's just as easy to convert Fahrenheit to Celcius;
-
-// °C = (°F − 32) x 5/9
 
 const fakeFetch = (url) => {
   return new Promise((resolve, reject) => {
