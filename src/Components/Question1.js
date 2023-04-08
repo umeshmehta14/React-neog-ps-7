@@ -46,7 +46,6 @@ const Question1 = () => {
     const ChangeMeasurement = ()=>{
         if(currentMeasurement === "Fahrenheit")
         {
-
             const F = (weatherData2.temperature * 9/5) + 32;
             setWeatherData({...weatherData, temperature: Math.ceil(F)})
             setCurrentMeasurement("Celsius")
