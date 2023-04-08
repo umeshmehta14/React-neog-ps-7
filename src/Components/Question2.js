@@ -54,6 +54,7 @@ const Question2 = () => {
         <p>Name:{userData.name}</p>
         <p>Email:{userData.email}</p>
         <p>Phone:{userData.phone}</p>
+
       </div>
       <button onClick={()=> setClick(!click)}>{click ? "Hide Address":"Show Address"}</button>
       <div>{click &&

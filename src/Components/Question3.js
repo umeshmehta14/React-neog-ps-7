@@ -46,13 +46,13 @@ const Question3 = () => {
 
     const SortByYear = (event)=>{
 
-        const choosedYear = event.target.value;
+        const choosedYear = parseInt(event.target.value);
         if(choosedYear === "All")
         {
             setMovieData(movieData2);
         }
         else{
-            const filterYear = movieData2.filter(({year})=> year == choosedYear)
+            const filterYear = movieData2.filter(({year})=> year === choosedYear)
             setMovieData(filterYear);
         }
 
