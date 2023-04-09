@@ -50,6 +50,7 @@ const fakeFetch = (url) => {
 const Question7 = () => {
     const [productsData, setProductsData] =  useState([]);
     const [productsData2, setProductsData2] =  useState([]);
+    const [clicked, setClicked] =  useState(false);
     const [loading, setLoading] =  useState(true);
     const getData = async()=>{
         try {
@@ -66,14 +67,24 @@ const Question7 = () => {
     },[])
 
     const SortByPrice = ()=>{
-        const sortedData = productsData.sort((a,b)=> a.price - b.price);
-        console.log(sortedData)
+        if(clicked)
+        {
+            setProductsData(productsData2);
+            setClicked(false);
+        }
+        else{
+
+          const sortedData = [...productsData].sort((a,b)=> a.price - b.price);
+          setProductsData(sortedData)
+          setClicked(true)
+
+        }
 
     }
   return (
     <div>
       <p>{loading && "...Loading"}</p>
-      <button onClick={SortByPrice}>Sort By price</button>
+      <button onClick={SortByPrice}>{clicked? "Normal" :"Lowest to highest"}</button>
       <ul>
         {
             productsData.map(({name, description, price, quantity})=>{
